@@ -7,19 +7,14 @@ class Serialize extends AbstractFormatter
 
     private $class;
 
-    public function __construct($class_name)
+    public function __construct($class_object)
     {
-        $this->class = $class_name;
+        $this->class = $class_object;
     }
 
     private function getClassStructure()
     {
-        $vars = get_class_vars($this->class);
-        $methods = get_class_methods($this->class);
-
-        $class_structure = new stdClass();
-        $class_structure->properties = $methods;
-        $class_structure->methods = $vars;
+        serialize($this->class);
 
         return $class_structure;
     }
