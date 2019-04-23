@@ -4,7 +4,7 @@ require_once __DIR__ . '/Person.php';
 require_once __DIR__ . '/../src/Serialize.php';
 require_once __DIR__ . '/../src/FormatterException.php';
 
-$obj = null;//new Person('john@example.com', 31);
+$obj = new Person('john@example.com', 31);
 
 
 
