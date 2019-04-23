@@ -15,6 +15,10 @@ abstract class AbstractFormatter
      * Encode array to YAML
      */
     public function convertYAML($array){
+
+        if (!function_exists('yaml_emit'))
+            throw new FormatterException('Extention yaml not install');
+
         return yaml_emit($array);
     }
 
@@ -23,6 +27,10 @@ abstract class AbstractFormatter
      * Encode array to XML
      */
     public function convertXML($array){
+
+        if (!function_exists('yaml_emit'))
+            throw new FormatterException('Extention SimpleXML not install');
+
         return $this->xml_encode($array);
     }
 

@@ -14,6 +14,9 @@ class Serialize extends AbstractFormatter
      */
     public function __construct($class_object)
     {
+        if (!$class_object){
+            throw new FormatterException('Empty object class');
+        }
         $this->class = get_object_vars($class_object);
     }
 
